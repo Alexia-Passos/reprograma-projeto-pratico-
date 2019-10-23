@@ -13,3 +13,7 @@ exports.getById = (req,res) => {
     console.log(id)
     res.status(200).send(tarefas.find(item => item.id == id))
 }
+exports.getConcluidos = (req,res) => {
+    const tarefasConcluidas = tarefas.filter(item => item.concluido == "true")
+    res.status(200).send(tarefasConcluidas)
+}
